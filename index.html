@@ -87,6 +87,158 @@ const groups=[
 ['Lei Orgânica Municipal',['Disposições Preliminares','Demais dispositivos da Lei Orgânica atualizada']],
 ['Regimento Interno',['Resolução nº 703, de 1º de novembro de 2024']]];
 const lessons={
+'1-3': {
+  intro: 'Reconheça tautologias, contradições e contingências pela tabela-verdade e pratique com dez questões inéditas.',
+  body: `<h2>Tautologia</h2>
+<p>É uma proposição que resulta sempre verdadeira, independentemente dos valores das proposições simples.</p>
+<p>Exemplo: <b>p ∨ ¬p</b> — O computador está ligado ou não está ligado.</p>
+<table aria-label="Tabela-verdade da tautologia p ∨ ¬p">
+  <thead><tr><th scope="col">p</th><th scope="col">¬p</th><th scope="col">p ∨ ¬p</th></tr></thead>
+  <tbody><tr><td>V</td><td>F</td><td>V</td></tr><tr><td>F</td><td>V</td><td>V</td></tr></tbody>
+</table>
+<p>A última coluna apresenta somente V: portanto, é uma tautologia.</p>
+<h2>Contradição ou proposição logicamente falsa</h2>
+<p>É uma proposição que resulta sempre falsa, independentemente dos valores das proposições simples.</p>
+<p>Exemplo: <b>p ∧ ¬p</b> — O computador está ligado e não está ligado, ao mesmo tempo e nas mesmas condições.</p>
+<table aria-label="Tabela-verdade da contradição p ∧ ¬p">
+  <thead><tr><th scope="col">p</th><th scope="col">¬p</th><th scope="col">p ∧ ¬p</th></tr></thead>
+  <tbody><tr><td>V</td><td>F</td><td>F</td></tr><tr><td>F</td><td>V</td><td>F</td></tr></tbody>
+</table>
+<p>A última coluna apresenta somente F: portanto, é uma contradição.</p>
+<h2>Comparação: tautologia e contradição</h2>
+<table aria-label="Comparação entre tautologia e contradição">
+  <thead><tr><th scope="col">p</th><th scope="col">¬p</th><th scope="col">p ∨ ¬p — tautologia</th><th scope="col">p ∧ ¬p — contradição</th></tr></thead>
+  <tbody><tr><td>V</td><td>F</td><td>V</td><td>F</td></tr><tr><td>F</td><td>V</td><td>V</td><td>F</td></tr></tbody>
+</table>
+<p>Observe: usar OU entre p e sua negação produz uma tautologia; usar E produz uma contradição.</p>
+<h2>Contingência</h2>
+<p>É uma proposição que apresenta resultados verdadeiros e falsos conforme os valores atribuídos às proposições simples.</p>
+<p>Exemplo: <b>p → q</b> — Se estudo, então sou aprovado.</p>
+<table aria-label="Tabela-verdade da condicional p → q">
+  <thead><tr><th scope="col">p</th><th scope="col">q</th><th scope="col">p → q</th></tr></thead>
+  <tbody><tr><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td></tr><tr><td>F</td><td>V</td><td>V</td></tr><tr><td>F</td><td>F</td><td>V</td></tr></tbody>
+</table>
+<p>A última coluna apresenta V e F: portanto, é uma contingência.</p>
+<div class="callout">⚠️ A condicional só é falsa quando o antecedente é verdadeiro e o consequente é falso.</div>
+<h2>Como identificar</h2>
+<ol><li>Monte a tabela-verdade com todas as combinações possíveis.</li><li>Resolva os conectivos da expressão.</li><li>Observe a última coluna.</li></ol>
+<table aria-label="Classificação pela última coluna">
+  <thead><tr><th scope="col">Resultado da última coluna</th><th scope="col">Classificação</th></tr></thead>
+  <tbody><tr><td>Somente V</td><td>Tautologia</td></tr><tr><td>Somente F</td><td>Contradição</td></tr><tr><td>V e F</td><td>Contingência</td></tr></tbody>
+</table>
+<div class="callout">🧠 Só V: tautologia. Só F: contradição. Misturou V e F: contingência.</div>
+<p>Uma tabela com n proposições simples distintas possui <b>2ⁿ linhas</b>. Com duas proposições, são quatro combinações: VV, VF, FV e FF.</p>
+<h2>Negação das classificações</h2>
+<table aria-label="Classificação de uma expressão e de sua negação">
+  <thead><tr><th scope="col">Classificação da expressão</th><th scope="col">Classificação de sua negação</th></tr></thead>
+  <tbody><tr><td>Tautologia</td><td>Contradição</td></tr><tr><td>Contradição</td><td>Tautologia</td></tr><tr><td>Contingência</td><td>Contingência</td></tr></tbody>
+</table>
+<p>Negar uma expressão inverte os valores de sua coluna final: V vira F e F vira V. Se a coluna já apresentava os dois valores, continuará apresentando os dois.</p>
+<h2>Pegadinhas de prova</h2>
+<ul>
+  <li>⚠️ Ser falsa em uma situação não basta para ser contradição: a expressão precisa ser falsa em todas as combinações.</li>
+  <li>⚠️ Ser verdadeira na maioria das linhas não basta para ser tautologia: precisa ser verdadeira em todas.</li>
+  <li>⚠️ Duas expressões são logicamente equivalentes quando apresentam os mesmos valores em todas as linhas. A bicondicional entre elas é uma tautologia.</li>
+</ul>
+<h2>Exemplos para revisar</h2>
+<table aria-label="Expressões e suas classificações">
+  <thead><tr><th scope="col">Expressão</th><th scope="col">Classificação</th></tr></thead>
+  <tbody>
+    <tr><td>p ∨ ¬p</td><td>Tautologia</td></tr>
+    <tr><td>p ∧ ¬p</td><td>Contradição</td></tr>
+    <tr><td>p → p</td><td>Tautologia</td></tr>
+    <tr><td>¬(p ∨ ¬p)</td><td>Contradição</td></tr>
+    <tr><td>¬(p ∧ ¬p)</td><td>Tautologia</td></tr>
+    <tr><td>p → q</td><td>Contingência</td></tr>
+    <tr><td>(p → q) ↔ (¬q → ¬p)</td><td>Tautologia</td></tr>
+  </tbody>
+</table>
+<p>Considere p e q variáveis proposicionais independentes. A última expressão é uma tautologia porque a condicional é equivalente à sua contrapositiva.</p>
+<h2>Questões de concurso — orientações</h2>
+<p>As 10 questões seguintes são inéditas, elaboradas com base em formatos de cobrança de concursos. Não são transcrições de questões oficiais.</p>
+<p>Considere a lógica proposicional clássica e p e q variáveis proposicionais independentes.</p>
+<table aria-label="Símbolos da lógica proposicional">
+  <thead><tr><th scope="col">Símbolo</th><th scope="col">Significado</th></tr></thead>
+  <tbody><tr><td>¬</td><td>Não</td></tr><tr><td>∧</td><td>E</td></tr><tr><td>∨</td><td>Ou inclusivo</td></tr><tr><td>→</td><td>Se... então</td></tr><tr><td>↔</td><td>Se e somente se</td></tr></tbody>
+</table>
+<p>Resolva as questões antes de consultar o gabarito ao final.</p>
+<h3>Questão 1 — Conceitos</h3>
+<p>Ao analisar uma expressão lógica, um candidato verificou que sua coluna final apresenta apenas valores falsos em todas as combinações possíveis. Essa expressão é uma:</p>
+<ol type="A"><li>Tautologia.</li><li>Contingência.</li><li>Contradição.</li><li>Sentença aberta.</li></ol>
+<h3>Questão 2 — Identificação de tautologia</h3>
+<p>Assinale a alternativa que apresenta uma tautologia.</p>
+<ol type="A"><li>p ∧ q.</li><li>p ∨ ¬p.</li><li>p ∧ ¬p.</li><li>p → q.</li></ol>
+<h3>Questão 3 — Contexto de informática</h3>
+<p>Considere a afirmação: “O servidor está disponível e o servidor não está disponível”, referindo-se ao mesmo servidor, no mesmo instante e nas mesmas condições. Sua estrutura lógica caracteriza uma:</p>
+<ol type="A"><li>Contingência, pois depende do estado do servidor.</li><li>Tautologia, pois contempla dois estados.</li><li>Sentença aberta, pois não informa o nome do servidor.</li><li>Contradição, pois afirma e nega simultaneamente a mesma proposição.</li></ol>
+<h3>Questão 4 — Condicional</h3>
+<p>A proposição p → q é classificada como:</p>
+<ol type="A"><li>Contingência, pois é falsa quando p é verdadeira e q é falsa, e verdadeira nas demais combinações.</li><li>Tautologia, pois toda condicional é verdadeira.</li><li>Contradição, pois existe uma combinação em que é falsa.</li><li>Tautologia, pois é verdadeira em três das quatro combinações.</li></ol>
+<h3>Questão 5 — Negação</h3>
+<p>Se uma proposição composta T é uma tautologia, então ¬T é, necessariamente:</p>
+<ol type="A"><li>Uma contingência.</li><li>Uma contradição.</li><li>Uma tautologia.</li><li>Uma proposição sem valor lógico.</li></ol>
+<h3>Questão 6 — Classificação de expressões</h3>
+<p>Considere as expressões:</p>
+<ol type="I"><li>p → p.</li><li>p ∧ ¬p.</li><li>p ∨ q.</li></ol>
+<p>As classificações de I, II e III são, respectivamente:</p>
+<ol type="A"><li>Contingência, contradição e tautologia.</li><li>Tautologia, contingência e contradição.</li><li>Tautologia, contradição e contingência.</li><li>Contradição, tautologia e contingência.</li></ol>
+<h3>Questão 7 — Implicação lógica</h3>
+<p>A expressão [(p → q) ∧ p] → q é uma:</p>
+<ol type="A"><li>Contradição, porque contém p e q.</li><li>Contingência, porque q pode ser falsa.</li><li>Contingência, porque possui mais de um conectivo.</li><li>Tautologia, pois não há combinação em que o antecedente seja verdadeiro e o consequente falso.</li></ol>
+<h3>Questão 8 — Certo ou errado</h3>
+<p>Julgue o item:</p>
+<p>“Uma expressão que apresenta resultado falso em pelo menos uma linha de sua tabela-verdade é necessariamente uma contradição.”</p>
+<p>Responda: Certo ou Errado.</p>
+<h3>Questão 9 — Equivalência</h3>
+<p>Julgue o item:</p>
+<p>“A expressão (p → q) ↔ (¬q → ¬p) é uma tautologia, pois a condicional e sua contrapositiva são logicamente equivalentes.”</p>
+<p>Responda: Certo ou Errado.</p>
+<h3>Questão 10 — Análise de afirmações</h3>
+<p>Considere as afirmações:</p>
+<ol type="I"><li>A negação de uma contradição é uma tautologia.</li><li>A negação de uma contingência é uma contradição.</li><li>Uma expressão verdadeira em três das quatro linhas de sua tabela-verdade é uma tautologia.</li></ol>
+<p>Está correto o que se afirma em:</p>
+<ol type="A"><li>I, apenas.</li><li>II, apenas.</li><li>I e III, apenas.</li><li>I, II e III.</li></ol>
+<h2>Gabarito</h2>
+<details id="tautology-answers"><summary>Conferir gabarito e comentários das 10 questões</summary>
+<table aria-label="Gabarito das dez questões">
+  <thead><tr><th scope="col">Questão</th><th scope="col">Resposta</th></tr></thead>
+  <tbody><tr><td>1</td><td>C</td></tr><tr><td>2</td><td>B</td></tr><tr><td>3</td><td>D</td></tr><tr><td>4</td><td>A</td></tr><tr><td>5</td><td>B</td></tr><tr><td>6</td><td>C</td></tr><tr><td>7</td><td>D</td></tr><tr><td>8</td><td>Errado</td></tr><tr><td>9</td><td>Certo</td></tr><tr><td>10</td><td>A</td></tr></tbody>
+</table>
+<h3>Gabarito comentado — questões 1 a 5</h3>
+<p><b>1 — C.</b> Uma contradição apresenta somente F na coluna final da tabela-verdade.</p>
+<p><b>2 — B.</b> Em p ∨ ¬p, uma das parcelas sempre é verdadeira. Como o conectivo é OU, o resultado é sempre V.</p>
+<p><b>3 — D.</b> A estrutura é p ∧ ¬p. Uma proposição e sua negação não podem ser simultaneamente verdadeiras; portanto, a conjunção é sempre falsa.</p>
+<p><b>4 — A.</b> A condicional apresenta V, F, V e V nas combinações VV, VF, FV e FF. Como há resultados verdadeiros e falsos, é uma contingência.</p>
+<p><b>5 — B.</b> Negar todos os resultados V de uma tautologia produz apenas F, caracterizando uma contradição.</p>
+<h3>Gabarito comentado — questão 6</h3>
+<p><b>6 — C.</b> As classificações são tautologia, contradição e contingência.</p>
+<table aria-label="Questão 6: classificação de três expressões">
+  <thead><tr><th scope="col">p</th><th scope="col">q</th><th scope="col">p → p</th><th scope="col">p ∧ ¬p</th><th scope="col">p ∨ q</th></tr></thead>
+  <tbody><tr><td>V</td><td>V</td><td>V</td><td>F</td><td>V</td></tr><tr><td>V</td><td>F</td><td>V</td><td>F</td><td>V</td></tr><tr><td>F</td><td>V</td><td>V</td><td>F</td><td>V</td></tr><tr><td>F</td><td>F</td><td>V</td><td>F</td><td>F</td></tr></tbody>
+</table>
+<p>I apresenta somente V; II apresenta somente F; III apresenta V e F.</p>
+<h3>Gabarito comentado — questão 7</h3>
+<p><b>7 — D.</b> A expressão é uma tautologia.</p>
+<table aria-label="Questão 7: tabela-verdade de [(p → q) ∧ p] → q">
+  <thead><tr><th scope="col">p</th><th scope="col">q</th><th scope="col">p → q</th><th scope="col">(p → q) ∧ p</th><th scope="col">[(p → q) ∧ p] → q</th></tr></thead>
+  <tbody><tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td><td>F</td><td>V</td></tr><tr><td>F</td><td>V</td><td>V</td><td>F</td><td>V</td></tr><tr><td>F</td><td>F</td><td>V</td><td>F</td><td>V</td></tr></tbody>
+</table>
+<p>Se o antecedente da condicional principal for verdadeiro, q também será verdadeiro. Quando o antecedente for falso, a condicional principal será verdadeira.</p>
+<h3>Gabarito comentado — questões 8 e 9</h3>
+<p><b>8 — Errado.</b> Uma linha falsa impede a classificação como tautologia, mas não comprova contradição. Para ser contradição, todas as linhas precisam apresentar F.</p>
+<p><b>9 — Certo.</b> A condicional e sua contrapositiva apresentam resultados iguais em todas as combinações.</p>
+<table aria-label="Questão 9: equivalência entre condicional e contrapositiva">
+  <thead><tr><th scope="col">p</th><th scope="col">q</th><th scope="col">p → q</th><th scope="col">¬q → ¬p</th><th scope="col">(p → q) ↔ (¬q → ¬p)</th></tr></thead>
+  <tbody><tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td><td>F</td><td>V</td></tr><tr><td>F</td><td>V</td><td>V</td><td>V</td><td>V</td></tr><tr><td>F</td><td>F</td><td>V</td><td>V</td><td>V</td></tr></tbody>
+</table>
+<p>A bicondicional entre expressões equivalentes é sempre verdadeira.</p>
+<h3>Gabarito comentado — questão 10</h3>
+<p><b>10 — A.</b> Apenas I está correta.</p>
+<p>I é verdadeira: a negação de uma contradição transforma todos os resultados F em V.</p>
+<p>II é falsa: a negação de uma contingência continua apresentando V e F.</p>
+<p>III é falsa: uma tautologia precisa ser verdadeira em todas as linhas. Três resultados V e um F caracterizam contingência.</p>
+</details>`
+},
 '0-6': {
   intro: 'Diferencie a sílaba tônica do acento gráfico e revise as regras de acentuação.',
   body: `<h2>Tônica × gráfica</h2>
@@ -270,7 +422,7 @@ function preference(key, fallback) { try { return localStorage.getItem(KEY + '-'
 function setPreference(key, value) { try { localStorage.setItem(KEY + '-' + key, value); } catch { notify('Preferência aplicada apenas nesta sessão.'); } }
 
 /* 4. NAVEGAÇÃO E RENDERIZAÇÃO. Nunca inserir texto de anotações via innerHTML. */
-const openGroups = new Set([String(chapterMap.get(state.current).g)]);
+const openGroups = new Set();
 let chapterOpen = false;
 const symbols = ['○','◐','↻','✓'];
 const labels = ['A estudar','Em estudo','Revisar','Concluído'];
